@@ -19,6 +19,7 @@
             padding: 40px 55px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
+            position: relative;
         }
         .profile {
             display: flex;
@@ -66,15 +67,43 @@
             top: 20px;
             right: 20px;
             font-size: 16px;
-            padding: 8px 16px;
+            padding: 10px 18px;
             background: #1a73e8;
             color: white;
             border-radius: 5px;
             text-decoration: none;
             transition: background 0.3s ease;
+            z-index: 10;
         }
         .resume-link:hover {
             background: #0b4c8c;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 25px;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 999;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        .profile.scrolled {
+            position: sticky;
+            top: 0;
+            padding: 10px 0;
+        }
+        .profile.scrolled img {
+            width: 80px;
+            height: 80px;
+        }
+        .profile.scrolled h1 {
+            font-size: 24px;
+        }
+        .profile.scrolled .subtitle {
+            font-size: 14px;
         }
     </style>
 </head>
@@ -83,11 +112,11 @@
 <div class="container">
 
     <!-- Profile Section -->
-    <div class="profile">
+    <div class="profile" id="profile">
         <img src="pavan.jpeg" alt="Profile Photo"> <!-- <-- Replace with your link/path -->
         <div>
             <h1>Pavan Kumar Kunasani</h1>
-            <div class="subtitle">Senior Full-Stack Engineer • Java | Spring Boot | Angular | Cloud</div>
+            <div class="subtitle">Senior Full-Stack Engineer • Java | Spring Boot | Angular/React | Cloud</div>
         </div>
     </div>
 
@@ -135,5 +164,17 @@
     </p>
 
 </div>
+
+<script>
+    window.addEventListener('scroll', function() {
+        const profile = document.getElementById('profile');
+        if (window.scrollY > 50) {
+            profile.classList.add('scrolled');
+        } else {
+            profile.classList.remove('scrolled');
+        }
+    });
+</script>
+
 </body>
 </html>
