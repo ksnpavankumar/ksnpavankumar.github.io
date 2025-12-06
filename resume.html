@@ -19,6 +19,35 @@
             padding: 40px 60px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.12);
+            position: relative;
+        }
+        .download-group {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 12px;
+        }
+        .download-btn {
+            background: #d32f2f;
+            padding: 9px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .download-btn.excel {
+            background: #1c7c32;
+        }
+        .download-btn:hover {
+            opacity: 0.85;
+        }
+        .download-btn img {
+            width: 20px;
+            height: 20px;
         }
         h1 {
             font-size: 32px;
@@ -55,6 +84,18 @@
 <body>
 <div class="container">
 
+    <div class="download-group">
+    <a class="download-btn" href="./resume/pavankunasani-sse-resume.pdf" target="_blank" download>
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF">
+        PDF
+    </a>
+    <a class="download-btn doc" href="./resume/pavankunasani-sse-resume.docx" target="_blank" download
+       style="background:#005bb3;">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732223.png" alt="DOC">
+        Word
+    </a>
+</div>
+
     <h1>PAVAN KUMAR KUNASANI</h1>
     <div class="contact">
         Email: <a href="mailto:pavankunasani@gmail.com">pavankunasani@gmail.com</a> |
@@ -83,44 +124,4 @@
     <h2>PROFESSIONAL EXPERIENCE</h2>
 
     <div class="role">
-        <span>Senior Software Engineer | Concentrix | January 2019 – Present</span>
-        <br>(Projects: QUAL PRO - Qualification Tracking Management)
-        <ul>
-            <li>Modernized legacy systems to a Spring Boot–based modular architecture.</li>
-            <li>Applied System Design for high scalability and reliability.</li>
-            <li>Developed complex and responsive Angular UI features.</li>
-            <li>Optimized Oracle queries and Hibernate mappings for high-volume transaction performance.</li>
-            <li>Managed CI/CD pipeline with Jenkins and deployments on Microsoft Azure.</li>
-        </ul>
-    </div>
-
-    <div class="role">
-        <span>Software Engineer | HTC Global Services | March 2018 – January 2019</span>
-        <br>(Project: ICMA - Specialized Nursing Homes Program)
-        <ul>
-            <li>Developed complete customer self-service module using Spring Boot + Hibernate.</li>
-            <li>Designed and documented REST APIs using Swagger and Spring MVC.</li>
-            <li>Ensured strong code coverage using JUnit and Mockito.</li>
-        </ul>
-    </div>
-
-    <div class="role">
-        <span>Software Engineer | Verinon Technology Solutions Pvt. Ltd. | January 2015 – March 2018</span>
-        <br>(Projects: LISI Systems (Aerospace), Doc-Viewer, Annual Assessment)
-        <ul>
-            <li>Delivered development and L1 support for mission-critical enterprise applications.</li>
-            <li>Enhanced LISI Aerospace Shipping module ensuring high availability and compliance.</li>
-            <li>Implemented business logic using Spring MVC and Spring IOC principles.</li>
-            <li>Worked directly with analysts to rapidly implement enhancements via OO methodologies.</li>
-        </ul>
-    </div>
-
-    <h2>EDUCATION</h2>
-    <p class="edu">
-        Bachelor of Technology in Electronics & Communication — Jawaharlal Nehru Technological University, Kakinada, India
-    </p>
-
-</div>
-</body>
-</html>
-
+        <span>Senior Software E
