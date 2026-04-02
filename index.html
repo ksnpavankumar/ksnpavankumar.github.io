@@ -3,181 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Kumar Kunasani</title>
+    <title>Pavan Kumar Kunasani — About Me</title>
     <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --blue:    #1a73e8;
+            --navy:    #0b4c8c;
+            --light-bg: #f0f4fb;
+            --card-bg:  #fff;
+            --text:    #2d2d2d;
+            --muted:   #606060;
+        }
+
         body {
-            margin: 0;
-            padding: 0;
-            background: #eef3f8;
             font-family: "Segoe UI", Arial, sans-serif;
-            color: #333;
-        }
-        .container {
-            max-width: 950px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px 55px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
-            position: relative;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        .profile img {
-            width: 155px;
-            height: 155px;
-            object-fit: cover;
-            border-radius: 50%; /* ⬅ rounded image */
-            border: 4px solid #dce8f4;
-        }
-        h1 {
-            margin: 0;
-            font-size: 38px;
-            color: #1a73e8;
-        }
-        .subtitle {
-            font-size: 20px;
-            margin-top: 6px;
-            color: #4a4a4a;
-        }
-        h2 {
-            margin-top: 38px;
-            font-size: 26px;
-            color: #0b4c8c;
-            border-bottom: 2px solid #d3e3f4;
-            padding-bottom: 4px;
-        }
-        p, li {
-            font-size: 18px;
+            background: var(--light-bg);
+            color: var(--text);
             line-height: 1.7;
         }
-        ul {
-            margin-top: 10px;
-        }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        .resume-link {
+
+        /* NAV BAR */
+        nav {
             position: sticky;
-            top: 15px;
-            right: 20px;
-            font-size: 16px;
-            padding: 10px 18px;
-            background: #1a73e8;
-            color: white;
-            border-radius: 5px;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #dde5f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 32px;
+        }
+        nav .brand { font-weight: 700; font-size: 17px; color: var(--navy); }
+        nav a.resume-btn {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 20px;
+            background: var(--blue);
+            color: #fff;
+            border-radius: 6px;
             text-decoration: none;
-            transition: background 0.3s ease;
-            z-index: 10;
-            width: fit-content;
-            margin-left: auto;
-            display: block;
+            transition: background 0.25s;
         }
-        .resume-link:hover {
-            background: #0b4c8c;
-        }
-        .profile {
+        nav a.resume-btn:hover { background: var(--navy); }
+
+        /* HERO */
+        .hero {
+            max-width: 900px;
+            margin: 56px auto 0;
+            padding: 0 24px;
             display: flex;
             align-items: center;
-            gap: 25px;
-            margin-bottom: 25px;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 999;
-            padding: 15px 0;
-            transition: all 0.3s ease;
+            gap: 48px;
         }
-        .profile.scrolled {
-            position: sticky;
-            top: 0;
-            padding: 10px 0;
+        .hero img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 6px 28px rgba(26,115,232,0.25);
+            flex-shrink: 0;
         }
-        .profile.scrolled img {
-            width: 80px;
-            height: 80px;
+        .hero-text h1 {
+            font-size: 40px;
+            color: var(--navy);
+            line-height: 1.15;
         }
-        .profile.scrolled h1 {
-            font-size: 24px;
+        .hero-text .tagline {
+            font-size: 18px;
+            color: var(--blue);
+            font-weight: 600;
+            margin: 8px 0 14px;
         }
-        .profile.scrolled .subtitle {
+        .hero-text .hook {
+            font-size: 17px;
+            color: var(--muted);
+            max-width: 520px;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            max-width: 900px;
+            margin: 48px auto 64px;
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* CARD */
+        .card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 36px 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+        .card h2 {
+            font-size: 22px;
+            color: var(--navy);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card h2 .icon { font-size: 26px; line-height: 1; }
+        .card p, .card li {
+            font-size: 16px;
+            color: var(--text);
+            line-height: 1.8;
+        }
+        .card p + p { margin-top: 14px; }
+
+        /* SKILL CHIPS */
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .chip {
+            padding: 6px 16px;
+            border-radius: 30px;
             font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            background: #e3edf9;
+            border: 1px solid #c4d8f0;
+            transition: transform 0.15s, background 0.2s;
+        }
+        .chip:hover { background: #caddfa; transform: translateY(-2px); }
+        .chip-group-label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--muted);
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+
+        /* VALUES GRID */
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 6px;
+        }
+        .value-item {
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 18px 20px;
+            border-left: 4px solid var(--blue);
+        }
+        .value-item .v-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .value-item p { font-size: 14px; color: var(--muted); }
+
+        /* HOBBIES */
+        .hobbies {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .hobby {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 20px 28px;
+            min-width: 120px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hobby:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(26,115,232,0.15); }
+        .hobby .h-icon { font-size: 34px; }
+        .hobby .h-label { font-size: 14px; font-weight: 600; color: var(--navy); text-align: center; }
+
+        /* CONTACT */
+        .contact-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--light-bg);
+            border-radius: 10px;
+            padding: 16px 24px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.15s;
+            border: 1px solid #d0ddef;
+        }
+        .contact-card:hover { background: #dce9fb; transform: translateY(-2px); }
+        .contact-card .c-icon { font-size: 22px; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            font-size: 13px;
+            color: #aaa;
+            padding: 24px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 640px) {
+            .hero { flex-direction: column; text-align: center; gap: 24px; }
+            .hero-text .hook { margin: 0 auto; }
+            .values-grid { grid-template-columns: 1fr; }
+            .card { padding: 26px 22px; }
         }
     </style>
 </head>
 <body>
-<a href="resume.html" class="resume-link">View Resume</a>
-<div class="container">
 
-    <!-- Profile Section -->
-    <div class="profile" id="profile">
-        <img src="pavan.jpeg" alt="Profile Photo"> <!-- <-- Replace with your link/path -->
-        <div>
-            <h1>Pavan Kumar Kunasani</h1>
-            <div class="subtitle">Senior Full-Stack Engineer • Java | Spring Boot | Angular/React | Cloud</div>
+<!-- Navigation -->
+<nav>
+    <span class="brand">Pavan Kumar Kunasani</span>
+    <a href="resume.html" class="resume-btn">📄 View Resume</a>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+    <img src="pavan.jpeg" alt="Pavan Kumar Kunasani">
+    <div class="hero-text">
+        <h1>Hi, I'm Pavan 👋</h1>
+        <div class="tagline">Senior Full-Stack Engineer · 11+ Years</div>
+        <p class="hook">
+            I build software that scales, performs, and genuinely helps people.
+            I care about clean code, great teams, and never stopping learning.
+        </p>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+
+    <!-- My Story -->
+    <div class="card">
+        <h2><span class="icon">🗺️</span> My Story</h2>
+        <p>
+            I started my software journey back in 2015 and honestly, I haven't looked back since.
+            Over the past <strong>11+ years</strong> I've gone from writing my first Spring MVC servlet
+            to designing microservice architectures that handle enterprise-scale traffic — and every step
+            in between has been an adventure.
+        </p>
+        <p>
+            Right now I'm a <strong>Senior Full-Stack Engineer at Concentrix</strong>, where I've been
+            modernizing legacy systems into a clean, Spring Boot–based modular architecture, tuning
+            Oracle queries for high-volume workloads, and shipping responsive Angular UIs — all while
+            keeping CI/CD pipelines healthy on Azure.
+        </p>
+        <p>
+            Before that, I built customer self-service modules at HTC Global Services and delivered
+            mission-critical aerospace enterprise apps at Verinon Technology Solutions.
+            Each role taught me something new about writing software that truly lasts.
+        </p>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="card">
+        <h2><span class="icon">⚙️</span> What I Work With</h2>
+
+        <div class="chip-group-label">Backend</div>
+        <div class="chips">
+            <span class="chip">Java 8 / 11+</span>
+            <span class="chip">Spring Boot 3</span>
+            <span class="chip">Spring MVC</span>
+            <span class="chip">Hibernate / JPA</span>
+            <span class="chip">RESTful APIs</span>
+            <span class="chip">Microservices</span>
+            <span class="chip">Kafka</span>
+            <span class="chip">Redis</span>
+        </div>
+
+        <div class="chip-group-label">Frontend</div>
+        <div class="chips">
+            <span class="chip">Angular</span>
+            <span class="chip">React</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">HTML5 / CSS3</span>
+            <span class="chip">JavaScript</span>
+        </div>
+
+        <div class="chip-group-label">Data &amp; Cloud</div>
+        <div class="chips">
+            <span class="chip">Oracle 11g / SQL</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Microsoft Azure</span>
+            <span class="chip">Docker / Podman</span>
+            <span class="chip">Jenkins</span>
+            <span class="chip">Git</span>
         </div>
     </div>
 
-    <p>
-        I'm a Senior Full-Stack Engineer with a little over <strong>11 years of experience</strong> designing and developing software.
-        I enjoy building systems that are practical, reliable, and easy to maintain.
-        Technology keeps evolving and I love staying part of that journey — learning, experimenting, and growing every day.
-    </p>
+    <!-- How I Work -->
+    <div class="card">
+        <h2><span class="icon">💡</span> How I Think &amp; Work</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="v-title">Simplicity First</div>
+                <p>Elegant, readable code beats clever code every time. If someone can't maintain it, it isn't done.</p>
+            </div>
+            <div class="value-item">
+                <div class="v-title">User-Centered Thinking</div>
+                <p>Every feature I ship solves a real problem for a real person. That context keeps me grounded.</p>
+            </div>
+            <div class="value-item">
+                <div class="v-title">Continuous Learning</div>
+                <p>I pick up new tools when they add genuine value — not just because they're trending.</p>
+            </div>
+            <div class="value-item">
+                <div class="v-title">Team Over Self</div>
+                <p>Good documentation, honest code reviews, and clear communication make teams great.</p>
+            </div>
+        </div>
+    </div>
 
-    <h2>What I Work On</h2>
-    <p>
-        My main expertise is in <strong>Java & Spring Boot</strong> for backend development and system design.
-        I've worked with microservices, distributed transactions, Kafka, Redis, and Oracle — mostly building applications that
-        serve large user bases and require stability and performance.
-        I also work on <strong>Angular and React</strong> for UI, and I enjoy the creative side of designing user experiences.
-    </p>
+    <!-- Beyond the Code -->
+    <div class="card">
+        <h2><span class="icon">🌱</span> Beyond the Code</h2>
+        <p>
+            When I step away from the keyboard, I recharge through sports, books, and tinkering with tech.
+        </p>
+        <div class="hobbies">
+            <div class="hobby">
+                <span class="h-icon">🏸</span>
+                <span class="h-label">Badminton</span>
+            </div>
+            <div class="hobby">
+                <span class="h-icon">🏓</span>
+                <span class="h-label">Table Tennis</span>
+            </div>
+            <div class="hobby">
+                <span class="h-icon">📚</span>
+                <span class="h-label">Tech Books</span>
+            </div>
+            <div class="hobby">
+                <span class="h-icon">🐧</span>
+                <span class="h-label">Linux</span>
+            </div>
+            <div class="hobby">
+                <span class="h-icon">☁️</span>
+                <span class="h-label">Cloud Tinkering</span>
+            </div>
+        </div>
+        <p style="margin-top:18px;">
+            I'm a firm believer that sports sharpen focus just as much as studying does.
+            And reading tech books — not just tutorials — is how I build <em>real</em> understanding,
+            not just surface-level knowledge.
+        </p>
+    </div>
 
-    <h2>My Approach to Software</h2>
-    <ul>
-        <li>I prioritize simplicity and maintainability.</li>
-        <li>I like solving problems that genuinely help users and businesses.</li>
-        <li>I enjoy learning new tools when they add real value.</li>
-        <li>I believe good teamwork, documentation, and clean code make everyone’s life easier.</li>
-    </ul>
+    <!-- What's Next -->
+    <div class="card">
+        <h2><span class="icon">🚀</span> What I'm Aiming For</h2>
+        <p>
+            I'm excited to keep growing into deeper system design, cloud architecture, and distributed computing.
+            Dynamic programming and algorithmic thinking are areas I actively sharpen — because hard problems
+            deserve well-thought-out solutions.
+        </p>
+        <p>
+            Long term, I want to take on a lead engineering role where I can mentor others, make architectural
+            decisions, and build systems that stand the test of time. As long as I'm learning and contributing,
+            I'm exactly where I want to be.
+        </p>
+    </div>
 
-    <h2>Personal Interests</h2>
-    <p>
-        Outside work, I play <strong>badminton</strong> and <strong>table tennis</strong> — sports keep me energetic,
-        focused, and refreshed. I also enjoy reading <strong>technology-related books</strong> because they help me understand
-        things deeply rather than just learning on the surface.
-        Linux and cloud technologies fascinate me — it's amazing how much you can build and automate with them.
-    </p>
-
-    <h2>What I Look Forward To</h2>
-    <p>
-        I want to continue building efficient systems, exploring cloud architecture, and improving my problem-solving skills.
-        Dynamic programming, system design, and distributed computing are areas I find both challenging and enjoyable.
-        As long as I'm learning and contributing, I feel satisfied.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-        Email: <a href="mailto:pavankunasani@gmail.com">pavankunasani@gmail.com</a><br>
-        Mobile: <a href="tel:9550033113">9550033113</a>
-    </p>
+    <!-- Contact -->
+    <div class="card">
+        <h2><span class="icon">✉️</span> Get in Touch</h2>
+        <p>Whether it's a project, an opportunity, or just a chat about tech — I'd love to hear from you.</p>
+        <div class="contact-row">
+            <a class="contact-card" href="mailto:pavankunasani@gmail.com">
+                <span class="c-icon">📧</span>
+                pavankunasani@gmail.com
+            </a>
+            <a class="contact-card" href="tel:9550033113">
+                <span class="c-icon">📱</span>
+                9550033113
+            </a>
+        </div>
+    </div>
 
 </div>
 
-<script>
-    window.addEventListener('scroll', function() {
-        const profile = document.getElementById('profile');
-        if (window.scrollY > 50) {
-            profile.classList.add('scrolled');
-        } else {
-            profile.classList.remove('scrolled');
-        }
-    });
-</script>
+<footer>Built with ❤️ by Pavan Kumar Kunasani</footer>
 
 </body>
 </html>
