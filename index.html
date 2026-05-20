@@ -1,183 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Kumar Kunasani</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #eef3f8;
-            font-family: "Segoe UI", Arial, sans-serif;
-            color: #333;
-        }
-        .container {
-            max-width: 950px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px 55px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.12);
-            position: relative;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        .profile img {
-            width: 155px;
-            height: 155px;
-            object-fit: cover;
-            border-radius: 50%; /* ⬅ rounded image */
-            border: 4px solid #dce8f4;
-        }
-        h1 {
-            margin: 0;
-            font-size: 38px;
-            color: #1a73e8;
-        }
-        .subtitle {
-            font-size: 20px;
-            margin-top: 6px;
-            color: #4a4a4a;
-        }
-        h2 {
-            margin-top: 38px;
-            font-size: 26px;
-            color: #0b4c8c;
-            border-bottom: 2px solid #d3e3f4;
-            padding-bottom: 4px;
-        }
-        p, li {
-            font-size: 18px;
-            line-height: 1.7;
-        }
-        ul {
-            margin-top: 10px;
-        }
-        a {
-            color: #1a73e8;
-            text-decoration: none;
-        }
-        .resume-link {
-            position: sticky;
-            top: 15px;
-            right: 20px;
-            font-size: 16px;
-            padding: 10px 18px;
-            background: #1a73e8;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            z-index: 10;
-            width: fit-content;
-            margin-left: auto;
-            display: block;
-        }
-        .resume-link:hover {
-            background: #0b4c8c;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            margin-bottom: 25px;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 999;
-            padding: 15px 0;
-            transition: all 0.3s ease;
-        }
-        .profile.scrolled {
-            position: sticky;
-            top: 0;
-            padding: 10px 0;
-        }
-        .profile.scrolled img {
-            width: 80px;
-            height: 80px;
-        }
-        .profile.scrolled h1 {
-            font-size: 24px;
-        }
-        .profile.scrolled .subtitle {
-            font-size: 14px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – Pavan Kumar Kunasani</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f7fafd;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #222;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(90deg,#eee 60%,#e3f2fd 100%);
+      padding: 60px 10px 40px 10px;
+    }
+    .hero img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #bbdefb;
+      box-shadow: 0 4px 16px #b0bec54d;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 6px 0 0 0;
+      font-size: 2.8em;
+      color: #1769aa;
+    }
+    .hero .intro {
+      font-size: 1.3em;
+      color: #505050;
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+    .hero .links {
+      margin: 16px 0 0 0;
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero .links a {
+      color: #fff;
+      background: #1565c0;
+      padding: 10px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background .2s;
+      box-shadow: 0 2px 6px #90caf930;
+    }
+    .hero .links a:hover {
+      background: #0d47a1;
+    }
+    .about-container {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 700px;
+      margin: -45px auto 24px auto;
+      padding: 38px 36px;
+      box-shadow: 0 2px 20px #b0bec52e;
+    }
+    .about-container h2 {
+      color: #1565c0;
+      font-size: 2em;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+    .about-container p {
+      font-size: 1.12em;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .fun-facts {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+    }
+    .fun-fact {
+      flex: 1 1 180px;
+      background: #e3f2fd;
+      color: #12517e;
+      border-radius: 10px;
+      padding: 18px 14px;
+      font-size: 1.02em;
+      text-align: center;
+      box-shadow: 0 1px 7px #bbdefb33;
+      margin-bottom: 15px;
+      
+    }
+    .section-title {
+      margin: 52px auto 20px auto;
+      max-width: 700px;
+      font-size: 1.7em;
+      font-weight: bold;
+      color: #1976d2;
+      letter-spacing: 1px;
+      border-left: 5px solid #90caf9;
+      padding-left: 14px;
+    }
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      justify-content: flex-start;
+    }
+    .skill-item {
+      background: #ede7f6;
+      color: #4527a0;
+      border-radius: 9px;
+      padding: 11px 21px;
+      font-size: 1.1em;
+      font-weight: 500;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 5px #b39ddb1c;
+    }
+    .timeline {
+      max-width: 680px;
+      margin: 27px auto 8px auto;
+      border-left: 2px solid #ce93d8;
+      padding-left: 34px;
+    }
+    .timeline-event {
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .timeline-event:before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #7e57c2;
+      position: absolute;
+      left: -39px;
+      top: 3px;
+      border: 2px solid #ececec;
+    }
+    .timeline-event strong {
+      color: #42175d;
+      font-size: 1.12em;
+      letter-spacing: 0.5px;
+    }
+    .timeline-event small {
+      color: #7e57c2;
+      font-size: 0.9em;
+      margin-left: 7px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 1em;
+      color: #555;
+      margin: 36px auto 18px auto;
+    }
+    @media (max-width: 700px) {
+      .about-container, .section-title, .timeline, .skills-row { padding-left: 12px; padding-right: 12px; }
+      .about-container { padding: 30px 10px; }
+    }
+    @media (max-width: 500px) {
+      .skills-row, .fun-facts { flex-direction: column; gap:10px; }
+    }
+  </style>
 </head>
 <body>
-<a href="resume.html" class="resume-link">View Resume</a>
-<div class="container">
-
-    <!-- Profile Section -->
-    <div class="profile" id="profile">
-        <img src="pavan.jpeg" alt="Profile Photo"> <!-- <-- Replace with your link/path -->
-        <div>
-            <h1>Pavan Kumar Kunasani</h1>
-            <div class="subtitle">Senior Full-Stack Engineer • Java | Spring Boot | Angular/React | Cloud</div>
-        </div>
+  <div class="hero">
+    <img src="pavan.jpeg" alt="Pavan Kumar Kunasani">
+    <h1>Pavan Kumar Kunasani</h1>
+    <div class="intro">
+      Welcome! I'm a full-stack engineer, curious tech explorer & sports lover.<br>
+      Creating robust, joyful solutions is my thing.
     </div>
-
+    <div class="links">
+      <a href="mailto:pavankunasani@gmail.com">Email Me</a>
+      <a href="https://www.linkedin.com/in/pavan-kumar-kunasani-74282375/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ksnpavankumar" target="_blank">GitHub</a>
+      <a href="resume.html">Résumé</a>
+    </div>
+  </div>
+  <div class="about-container">
+    <h2>About Me</h2>
     <p>
-        I'm a Senior Full-Stack Engineer with a little over <strong>11 years of experience</strong> designing and developing software.
-        I enjoy building systems that are practical, reliable, and easy to maintain.
-        Technology keeps evolving and I love staying part of that journey — learning, experimenting, and growing every day.
+      I'm a passionate software engineer with over 11 years of experience turning ideas into scalable, real-world applications. I believe in building things that are simple, dependable, and improve everyday life &ndash; for users and creators alike.
     </p>
-
-    <h2>What I Work On</h2>
     <p>
-        My main expertise is in <strong>Java & Spring Boot</strong> for backend development and system design.
-        I've worked with microservices, distributed transactions, Kafka, Redis, and Oracle — mostly building applications that
-        serve large user bases and require stability and performance.
-        I also work on <strong>Angular and React</strong> for UI, and I enjoy the creative side of designing user experiences.
+      I embrace new technologies, but value clarity and teamwork above hype. Whether it's a new Java framework, cloud trick, or self-hosting on Linux, I'm always learning & enjoying the journey. Outside work, sports and reading give me energy, inspiration, and perspective.
     </p>
+    <div class="fun-facts">
+      <div class="fun-fact">🏓 Love badminton & table tennis</div>
+      <div class="fun-fact">📚 Avid tech book reader</div>
+      <div class="fun-fact">🐧 Linux & cloud automation fan</div>
+      <div class="fun-fact">☕ Real coffee enthusiast</div>
+      <div class="fun-fact">🧩 Dynamic programming hobbyist</div>
+    </div>
+  </div>
+  <div class="section-title">What I Love Working With</div>
+  <div class="skills-row">
+    <div class="skill-item">Java & Spring Boot</div>
+    <div class="skill-item">Angular & React</div>
+    <div class="skill-item">Kafka, Redis, Oracle</div>
+    <div class="skill-item">Microservices</div>
+    <div class="skill-item">System & Cloud Design</div>
+    <div class="skill-item">Linux/Automation</div>
+  </div>
+  <div class="section-title">My Journey</div>
+  <div class="timeline">
+    <div class="timeline-event">
+      <strong>Developed my first web app</strong>
+      <small>(2011)</small><br>
+      Learned the joy of building something useful from scratch.
+    </div>
+    <div class="timeline-event">
+      <strong>Deep dived into Java & backend systems</strong>
+      <small>(2012-2016)</small><br>
+      Mastered enterprise architectures and reliable APIs.
+    </div>
+    <div class="timeline-event">
+      <strong>Full-Stack leap</strong>
+      <small>(2017+)</small><br>
+      Enjoy bringing together backend, frontend, and cloud magic.
+    </div>
+    <div class="timeline-event">
+      <strong>Always a learner</strong>
+      <small>(Now)</small><br>
+      Exploring, sharing & applying new ideas every day.
+    </div>
+  </div>
 
-    <h2>My Approach to Software</h2>
-    <ul>
-        <li>I prioritize simplicity and maintainability.</li>
-        <li>I like solving problems that genuinely help users and businesses.</li>
-        <li>I enjoy learning new tools when they add real value.</li>
-        <li>I believe good teamwork, documentation, and clean code make everyone’s life easier.</li>
-    </ul>
+  <div class="section-title">Things I’m Into</div>
+  <div class="fun-facts">
+    <div class="fun-fact">🤝 Teamwork and great documentation</div>
+    <div class="fun-fact">🛠️ Automating work with Linux scripts</div>
+    <div class="fun-fact">🎨 Designing usable, simple user experiences</div>
+    <div class="fun-fact">🧠 System design challenges</div>
+  </div>
 
-    <h2>Personal Interests</h2>
-    <p>
-        Outside work, I play <strong>badminton</strong> and <strong>table tennis</strong> — sports keep me energetic,
-        focused, and refreshed. I also enjoy reading <strong>technology-related books</strong> because they help me understand
-        things deeply rather than just learning on the surface.
-        Linux and cloud technologies fascinate me — it's amazing how much you can build and automate with them.
-    </p>
-
-    <h2>What I Look Forward To</h2>
-    <p>
-        I want to continue building efficient systems, exploring cloud architecture, and improving my problem-solving skills.
-        Dynamic programming, system design, and distributed computing are areas I find both challenging and enjoyable.
-        As long as I'm learning and contributing, I feel satisfied.
-    </p>
-
-    <h2>Contact</h2>
-    <p>
-        Email: <a href="mailto:pavankunasani@gmail.com">pavankunasani@gmail.com</a><br>
-        Mobile: <a href="tel:9550033113">9550033113</a>
-    </p>
-
-</div>
-
-<script>
-    window.addEventListener('scroll', function() {
-        const profile = document.getElementById('profile');
-        if (window.scrollY > 50) {
-            profile.classList.add('scrolled');
-        } else {
-            profile.classList.remove('scrolled');
-        }
-    });
-</script>
-
+  <div class="footer">
+    <hr style="border:none; border-top:1px solid #ddd; width:70%; margin:18px auto;">
+    &copy; 2026 Pavan Kumar Kunasani
+  </div>
 </body>
 </html>
